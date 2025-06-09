@@ -1,12 +1,16 @@
 package Recursion.StringSubSequences;
+
 import java.util.ArrayList;
 
 public class Permutation {
     public static void main(String[] args) {
-    permutations("", "abc");
-     ArrayList<String> ans =  permutationsArray("","KK");
-        System.out.println(ans);
-        System.out.println("Permutation Count : "+CountPermutations("", "abcd"));
+        permutations("", "abc");
+
+        // ? In case of distinct permutation just use the Set instead of a ArrayList 
+
+        // ArrayList<String> ans = permutationsArray("","KK");
+        // System.out.println(ans);
+        // System.out.println("Permutation Count : "+CountPermutations("", "abcd"));
 
     }
 
@@ -19,6 +23,7 @@ public class Permutation {
         for (int i = 0; i <= p.length(); i++) {
             String first = p.substring(0, i);
             String second = p.substring(i, p.length());
+            System.out.println("P : " + (first + ch + second) + "  UP : " + (up.substring(1)));
             permutations(first + ch + second, up.substring(1));
         }
     }
@@ -39,7 +44,7 @@ public class Permutation {
         return ans;
     }
 
-    static int CountPermutations(String p , String up){
+    static int CountPermutations(String p, String up) {
         if (up.isEmpty()) {
             return 1;
         }

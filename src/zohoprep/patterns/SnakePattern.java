@@ -1,3 +1,5 @@
+package zohoprep.patterns;
+
 import java.util.ArrayList;
 
 public class SnakePattern {

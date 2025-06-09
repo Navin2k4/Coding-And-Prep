@@ -3,7 +3,7 @@ import java.util.*;
 public class DFSAcyclicGraph {
     public static void main(String[] args) {
         int[][] edges = {{0,1}, {0,2}, {1,2}, {1,3}};
-        int V = 4;
+        // int V = 4;
 
         // Step 1: Build graph
         Map<Integer, List<Integer>> graph = new HashMap<>();

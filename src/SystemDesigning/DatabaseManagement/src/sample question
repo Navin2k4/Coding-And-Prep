@@ -1,0 +1,89 @@
+Key Classes found
+
+transaction_engine.VariableStore - Responsible for storing key-value pairs.
+ValueCounter = Tracks frequency of values for COUNT command.
+    Setting a key-value (SET)
+    Getting a value by key (GET)
+    Removing a key (UNSET)
+    Counting how many keys have a specific value (COUNT)
+    Cloning itself for transactions (BEGIN, ROLLBACK)
+
+transaction_engine.TransactionManager - Manages the stack of transactions (BEGIN/ROLLBACK/COMMIT).
+    BEGIN: Start a new transaction (push current state to stack)
+    ROLLBACK: Revert to the last saved state
+    COMMIT: Persist all changes (clear the stack)
+
+Transaction - Holds a snapshot of transaction_engine.VariableStore + ValueCounter at the time of BEGIN.
+InMemoryDatabase - Facade class. The core engine that binds everything.
+
+MyMap<K, V> - Custom implementation of a HashMap - using separate chaining.
+MyStack<T> - Custom implementation of a stack - using singly linked list
+
+
+Implement MyMap<K, V> and MyStack<T> (light but working)
+Implement transaction_engine.VariableStore and ValueCounter
+Implement Transaction and transaction_engine.TransactionManager
+Build inmemory_database.InMemoryDatabase with all operations
+Create a Main class to simulate command inputs
+
+
+
+
+This round is mainly based on data structure and oops concepts.
+No inbuilt collections are allowed. You need to implement on your own.
+Needs to discuss your approach before start solving the problem.
+Design a system with following functionalities,
+1. SET a variable
+2. GET a variable
+3. UNSET a variable
+4. COUNT NUMBERS OF VARIABLE with given value
+5. BEGIN — Begins a new transaction
+6. ROLLBACK — Roll back all the commands in the open transaction
+7. COMMIT — Commit the transaction
+
+8. EXAMPLE 1:
+SET a 20
+GET a
+SET b 30
+GET b
+SET a 10
+GET a
+UPDATE c 40
+SET c 30
+COUNT 30
+COUNT 40
+UNSET a
+GET a
+
+EXAMPLE 2:
+GET a
+SET a 30
+GET a
+
+EXAMPLE 3:
+SET a 30
+BEGIN
+GET a
+SET a 40
+GET a
+SET b 40
+GET b
+ROLLBACK
+GET b
+GET a
+
+EXAMPLE 4:
+BEGIN
+SET a 40
+SET b 40
+SET c 50
+COUNT 40
+BEGIN
+COUNT 40
+COMMIT
+COUNT 40
+BEGIN
+SET c 10
+GET c
+ROLLBACK
+GET c

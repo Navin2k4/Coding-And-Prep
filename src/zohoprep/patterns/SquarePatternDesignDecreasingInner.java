@@ -1,3 +1,5 @@
+package zohoprep.patterns;
+
 
 
 // You’re given an even number n. If n=4, you have to print the following pattern : 
