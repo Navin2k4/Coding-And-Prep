@@ -4,9 +4,8 @@ import java.util.Arrays;
 
 class RearrangeArraysAlternatively{
      public static void main(String[] args) {
-        int[] arr = {890, 289, 483, 519, 550, 447, 946, 957, 92, 783};
+        int[] arr = {1,2,3,4,5,6,7,8,9,10};
         rearrangeMaxMin(arr);
-        System.out.println(Arrays.toString(arr));
     }
 
     static void rearrangeMaxMin(int[] arr) {
@@ -28,9 +27,11 @@ class RearrangeArraysAlternatively{
                 minIdx++;
             }
         }
-
+        System.out.println(Arrays.toString(arr));
+        System.out.println(maxElem);
         for (int i = 0; i < n; i++) {
             arr[i] = arr[i] / maxElem;
         }
+        System.out.println(Arrays.toString(arr));
     }    
 }

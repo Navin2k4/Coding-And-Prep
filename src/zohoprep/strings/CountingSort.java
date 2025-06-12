@@ -1,7 +1,5 @@
 package zohoprep.strings;
 
-import java.util.Arrays;
-
 public class CountingSort {
     public static void main(String[] args) {
         String s = "edebsab";
