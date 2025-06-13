@@ -1,48 +1,37 @@
-//! https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/
-/*
- * Given an array arr[] of size N having distinct numbers sorted in increasing order and the array has been right rotated (i.e, the last element will be cyclically shifted to the starting position of the array) k number of times, the task is to find the value of k.
- ? Examples:  
- ? Input: arr[] = {15, 18, 2, 3, 6, 12}
- ? Output: 2
- * Explanation: Initial array must be {2, 3, 6, 12, 15, 18}. 
- * We get the given array after rotating the initial array twice.
- ? Input: arr[] = {7, 9, 11, 12, 5}
- ? Output: 4
- */
-
-// ! Reference : Search In A Rotated Sorted Array
-
 package BinarySearch;
-
 public class FindTheRotationCountInRotatedSortedArray {
     public static void main(String[] args) {
         int arr[] = { 15, 18, 2, 3, 6, 12 };
-        System.out.println("Number of Rotations : "+ findrotationcount(arr));
+        int arr1[] = { 1, 2, 3, 4, 5 };
+        System.out.println("Number of Rotations : " + findrotationcount(arr));
+        System.out.println("Number of Rotations : " + findrotationcount(arr1));
     }
 
-    static int findrotationcount(int[] nums){
-        int pivot = findPivot(nums);
-        return pivot+1;
-    }
-    
-    static int findPivot(int[] nums){
-        int start = 0;
-        int end = nums.length-1;
-        while(start<=end){
-            int mid = start + ( end - start ) /2;
+    static int findrotationcount(int[] arr) {
+        int low = 0;
+        int high = arr.length - 1;
+        int ans = Integer.MAX_VALUE;
 
-            if( mid<end && nums[mid] > nums[mid + 1]){
-                return mid;
-            }
-            if(mid>start && nums[mid] < nums[mid-1]){
-                return mid-1;
-            }
-            if(nums[mid] <= start){
-                end = mid - 1 ;
+        int index = -1;
+        // the min element is the pivot element where the rotation started
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[low] <= arr[mid]) {
+                // left half since in the left half the smallest is always the low
+                if (arr[low] < ans) {
+                    index = low;
+                    ans = arr[low];
+                }
+                low = mid + 1;
             } else {
-                start = mid + 1 ;
+                // right half since in the left half the smallest is always the mid
+                if (arr[mid] < ans) {
+                    index = mid;
+                    ans = arr[mid];
+                }
+                high = mid - 1;
             }
         }
-        return -1;
+        return index;
     }
 }
