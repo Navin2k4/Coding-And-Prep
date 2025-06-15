@@ -1,10 +1,9 @@
 package zohoprep.dp;
 
-import java.util.Arrays;
 
 class BuyAndSellStocks {
     public static void main(String[] args) {
-        int arr[] = { 100, 180, 260, 310, 40, 535, 695 };
+        // int arr[] = { 100, 180, 260, 310, 40, 535, 695 };
         int arr3[] = { 1,2,3,4,5 };
         // System.out.println(maxProfit(arr));
         // System.out.println(stockBuySell(arr));

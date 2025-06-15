@@ -1,0 +1,18 @@
+two types of graphs
+- Directed
+- Undirected
+
+Terms 
+Nodes
+Edges
+Degree
+
+Representations
+Adj. Matrix
+Adj. List
+
+Connected Components
+Components -> Different graphs seperately
+
+Traversal
+Always we use a visited array

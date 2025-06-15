@@ -2,15 +2,15 @@ package zohoprep.arrays;
 
 import java.util.Arrays;
 
-class RearrangeArraysAlternatively{
-     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9,10};
+class RearrangeArraysAlternatively {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         rearrangeMaxMin(arr);
     }
 
     static void rearrangeMaxMin(int[] arr) {
         int n = arr.length;
-        Arrays.sort(arr); 
+        Arrays.sort(arr);
 
         int maxIdx = n - 1;
         int minIdx = 0;
@@ -33,5 +33,5 @@ class RearrangeArraysAlternatively{
             arr[i] = arr[i] / maxElem;
         }
         System.out.println(Arrays.toString(arr));
-    }    
+    }
 }

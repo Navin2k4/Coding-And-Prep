@@ -1,5 +1,7 @@
 package zohoprep.martix;
+
 import java.util.*;
+
 public class SearchIn2DArray {
     static int[][] matrix = {
             { 1, 3, 5, 7 },
@@ -36,6 +38,7 @@ public class SearchIn2DArray {
         int high = n * m - 1;
         while (low <= high) {
             int mid = (low) + (high - low) / 2;
+            // converting the 1d index into 2d index
             int row = mid / m;
             int col = mid % m;
             if (matrix[row][col] == target) {
@@ -59,7 +62,7 @@ public class SearchIn2DArray {
 
         while (row < n || col >= 0) {
             if (matrix2[row][col] == target) {
-                return new int[]{row,col};
+                return new int[] { row, col };
             } else if (matrix2[row][col] < target) {
                 row++;
             } else {
@@ -67,6 +70,6 @@ public class SearchIn2DArray {
             }
         }
 
-        return new int[]{row,col};
+        return new int[] { row, col };
     }
 }
