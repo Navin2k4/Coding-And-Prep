@@ -26,7 +26,7 @@ class Solution {
     }
 }
 
-class minimumDeleionToMakePalindrome{
+class MinimumDeleionToMakePalindrome{
     public static void main(String[] args) {
         Solution sol = new Solution();
         String test = "abbaabbbaaa";
