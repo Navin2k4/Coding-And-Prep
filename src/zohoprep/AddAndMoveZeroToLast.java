@@ -1,4 +1,4 @@
-
+package zohoprep;
 public class AddAndMoveZeroToLast {
     public static void main(String[] args) {
         int[] arr = { 0, 2, 2, 2, 0, 6, 6, 0, 8 };

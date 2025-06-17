@@ -15,9 +15,7 @@ public class XPatternOfString {
                 }
             }
             System.out.println();
-        }
-        
-        
+        }       
     }
     // P            M
     //   R        A
@@ -27,5 +25,25 @@ public class XPatternOfString {
     //   R        A
     // P            M
         
+    static String crossPattern(String S) {
+        // code here
+        int length = S.length();
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i =0 ; i< length;i++){
+            for(int j=0;j<length;j++){
+                if(i==j){
+                    sb.append(S.charAt(i));
+                } else if(i+j == length-1){
+                    sb.append(S.charAt(j));
+                } else {
+                    sb.append(" ");
+                }
+            }
+        }
+        
+        return sb.toString();
+        
+    }
 
 }  
