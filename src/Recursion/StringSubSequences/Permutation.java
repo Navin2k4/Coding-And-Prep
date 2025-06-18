@@ -23,7 +23,6 @@ public class Permutation {
         for (int i = 0; i <= p.length(); i++) {
             String first = p.substring(0, i);
             String second = p.substring(i, p.length());
-            System.out.println("P : " + (first + ch + second) + "  UP : " + (up.substring(1)));
             permutations(first + ch + second, up.substring(1));
         }
     }

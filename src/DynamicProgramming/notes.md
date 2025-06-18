@@ -14,3 +14,8 @@ Try all possible ways -> count / best ways
 2. Do all possible stufs on that index according to the problem statement
 3. If the question says count all the ways -> sum up al stufs
    If the question says find min/max -> take the min/max
+
+
+# DP on Strings
+-  comparision
+-  replace/ edit
