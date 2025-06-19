@@ -6,8 +6,8 @@ public class WildcardMatching {
         // String s2 = "abdefcd"; // string
         String s1 = "baaaaba*****b***ab******"; // pattern
         String s2 = "aaaababbbaaabaabbbbabaababaabbabbaabababbaaaaaaabba"; // string
-        int n = s1.length();
-        int m = s2.length();
+        // int n = s1.length();
+        // int m = s2.length();
         // System.out.println(isMatch(n - 1, m - 1, s1, s2));
         System.out.println(isMatchDP(s1, s2));
     }
