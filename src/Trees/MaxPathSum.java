@@ -3,7 +3,8 @@ package Trees;
 public class MaxPathSum {
 
     static int maxPath(Node root, int[] maxPath) {
-        if (root == null) return 0;
+        if (root == null)
+            return 0;
         int leftPath = Math.max(0, maxPath(root.left, maxPath));
         int rightPath = Math.max(0, maxPath(root.right, maxPath));
         maxPath[0] = Math.max(maxPath[0], leftPath + rightPath + root.data);

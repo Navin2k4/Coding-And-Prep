@@ -2,7 +2,7 @@ package BinarySearch;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int array[] = { 1,2,6,7,8,11,11,14,18 }; // sorted array
+        int array[] = { 1, 2, 6, 7, 8, 11, 11, 14, 18 }; // sorted array
         // System.out.println(BinarySearchIndex(array, 18));
         System.out.println(LowerBound(array, 11));
         // System.out.println(UpperBound(array, 11));

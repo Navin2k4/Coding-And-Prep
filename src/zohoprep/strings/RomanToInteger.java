@@ -1,16 +1,14 @@
-package zohoprep.strings;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class RomanToInteger {
     public static void main(String[] args) {
-        // System.out.println(romanToInt("IX")); // 9
-        // System.out.println(romanToInt("LVIII")); // 58
-        // System.out.println(romanToInt("MCMXCIV")); // 1994
+        System.out.println(romanToInt("IX")); // 9
+        System.out.println(romanToInt("LVIII")); // 58
+        System.out.println(romanToInt("MCMXCIV")); // 1994
 
         // System.out.println(intToRoman(9)); // IX
-        System.out.println(intToRoman(58)); // LVIII
+        // System.out.println(intToRoman(58)); // LVIII
         // System.out.println(intToRoman(1994)); // MCMXCIV
     }
 

@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.TwoDArray;
 
 public abstract class MaxPathSumWithBlocks {
     public static void main(String[] args) {

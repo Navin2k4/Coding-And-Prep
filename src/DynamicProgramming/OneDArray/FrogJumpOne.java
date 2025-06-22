@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.OneDArray;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package DynamicProgramming.Recursions;
+package Recursion;
 
 import java.util.ArrayList;
 

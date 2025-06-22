@@ -1,22 +1,32 @@
-package DynamicProgramming;
+package DynamicProgramming.OneDArray;
 
 import java.util.Arrays;
 
-public class MaxSumOfNonAdjacentHouseRobber {
+public class HouseRobberTwo {
     public static void main(String[] args) {
-        // int[] nums = { 1, 2, 3, 1 };
-        int[] nums = { 2, 7, 9, 3, 1 };
-        int n = nums.length - 1;
 
-        // System.out.println(robRec(n, nums));
+        // the new constraint is the house are arranges in circulary way
 
+        // int[] nums = { 1, 2, 3, 1 }; //4
+        // int[] nums = { 2,3,2 }; //
+        int[] nums = { 1, 2, 3, 1 };
+        int n = nums.length;
+
+        int withoutFirst[] = new int[n];
+        int withoutLast[] = new int[n];
+        for (int i = 1; i < n; i++) {
+            withoutFirst[i] = nums[i];
+        }
+        for (int i = 0; i < n - 1; i++) {
+            withoutLast[i] = nums[i];
+        }
+        int wF = robRec(n - 1, withoutFirst);
+        int wL = robRec(n - 1, withoutLast);
+        System.out.println(Math.max(wF, wL));
+
+        // using the wF and wL can help in working out for all
         int[] memDP = new int[n + 1];
         Arrays.fill(memDP, -1);
-        System.out.println(robRecMem(n, nums, memDP));
-
-        System.out.println(robRecTab(nums));
-
-        System.out.println(robRecOptimized(nums));
     }
 
     static int robRec(int i, int[] nums) {
@@ -50,7 +60,6 @@ public class MaxSumOfNonAdjacentHouseRobber {
         int n = nums.length;
         if (n == 0)
             return 0;
-
         int[] dp = new int[n];
         dp[0] = nums[0];
         for (int i = 1; i < n; i++) {
@@ -68,7 +77,6 @@ public class MaxSumOfNonAdjacentHouseRobber {
         if (n == 0)
             return 0;
 
-        
         int prev = nums[0];
         int prev2 = 0;
 

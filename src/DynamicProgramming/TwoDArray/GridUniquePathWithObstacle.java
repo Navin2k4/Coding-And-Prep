@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.TwoDArray;
 
 public class GridUniquePathWithObstacle {
 

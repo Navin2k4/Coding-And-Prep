@@ -1,11 +1,11 @@
-package DynamicProgramming;
+package DynamicProgramming.OneDArray;
 
 import java.util.Arrays;
 
-public class HouseRobberOne {
+public class MaxSumOfNonAdjacentHouseRobber {
     public static void main(String[] args) {
-        // int[] nums = { 1, 2, 3, 1 }; // 4
-        int[] nums = { 2, 7, 9, 3, 1 }; // 12
+        // int[] nums = { 1, 2, 3, 1 };
+        int[] nums = { 2, 7, 9, 3, 1 };
         int n = nums.length - 1;
 
         // System.out.println(robRec(n, nums));
