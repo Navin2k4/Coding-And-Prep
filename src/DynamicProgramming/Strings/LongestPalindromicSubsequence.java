@@ -2,7 +2,7 @@ package DynamicProgramming.Strings;
 
 public class LongestPalindromicSubsequence {
     public static void main(String[] args) {
-        String text1 = "bbabcbcab"; // babcbab
+        String text1 = "abcde"; // babcbab
         String reversed = new StringBuilder(text1).reverse().toString();
         System.out.println(LCS(text1,reversed));
     }

@@ -1,9 +1,32 @@
 package Graphs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 public class DepthFirstSearch {
+
+    static void DFSIterative(List<List<Integer>> adjList, int V, int start) {
+        Stack<Integer> stack = new Stack<>();
+        boolean[] visited = new boolean[V];
+        stack.push(start);
+        while (!stack.isEmpty()) {
+            int node = stack.pop();
+            if (!visited[node]) {
+                visited[node] = true;
+                System.out.println(node + " ");
+                List<Integer> neighbours = adjList.get(node);
+                Collections.reverse(neighbours);
+                for (int neighbour : neighbours) {
+                    if (!visited[neighbour]) {
+                        stack.push(neighbour);
+                    }
+                }
+                Collections.reverse(neighbours);
+            }
+        }
+    }
 
     static ArrayList<Integer> DFS(List<List<Integer>> graph, int V) {
         ArrayList<Integer> res = new ArrayList<>();
@@ -60,5 +83,6 @@ public class DepthFirstSearch {
         // System.out.println();
         // }
         System.out.println(DFS(adjList, n).toString());
+        DFSIterative(adjList, n, 1);
     }
 }

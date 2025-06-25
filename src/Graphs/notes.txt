@@ -16,3 +16,9 @@ Components -> Different graphs seperately
 
 Traversal
 Always we use a visited array
+
+
+
+BFS -> Level order traversal -> Queue and Visited implementation
+DFS -> Depth Order traversal -> Stack and Visited implementation and Recursive approach 
+    -> we can use the explicit stack if we dont want a recursive approach in whic it will use the recursive stack
