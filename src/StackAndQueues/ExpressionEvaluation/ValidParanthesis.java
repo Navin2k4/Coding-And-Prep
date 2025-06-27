@@ -1,4 +1,4 @@
-package StackAndQueues;
+package StackAndQueues.ExpressionEvaluation;
 
 import java.util.Stack;
 
