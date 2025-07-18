@@ -13,7 +13,7 @@ class BinaryValuesPattern {
 // 1 1 1
         printBinaryPatternInBuiltFunctions(n);
         System.out.println();
-        printBinaryPattern(n);
+        // printBinaryPattern(n);
     }
 
     static void printBinaryPattern(int n) {
@@ -32,12 +32,18 @@ class BinaryValuesPattern {
     }
 
     static void printBinaryPatternInBuiltFunctions(int n) {
+        int count = 0; 
         int totalCombinations = (int) Math.pow(2, n);
         for (int i = 0; i < totalCombinations; i++) {
             String binary = Integer.toBinaryString(i);
             String padded = String.format("%" + n + "s", binary).replace(' ', '0');
             String spaced = String.join(" ", padded.split(""));
-            System.out.println(spaced);
+            System.out.println(spaced + " => " + i); // Print decimal value
+            if (padded.contains("11")) {
+                count += 1;
+            }
         }
+        System.out.println(count);
+
     }
 }

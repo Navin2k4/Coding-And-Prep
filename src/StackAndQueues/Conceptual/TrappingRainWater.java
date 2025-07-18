@@ -1,14 +1,15 @@
 package StackAndQueues.Conceptual;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class TrappingRainWater {
     public static void main(String[] args) {
         int[] height = { 4, 2, 0, 3, 2, 5 };
         // System.out.println(trapTwoPointerApproach(height));
-        // System.out.println(trapPrefixSuffix(height));
+        System.out.println(trapPrefixSuffix(height));
         // System.out.println(trapSuffix(height));
-        System.out.println(trapStack(height));
+        // System.out.println(trapStack(height));
     }
 
     static int trapTwoPointerApproach(int[] height) {
@@ -52,7 +53,10 @@ public class TrappingRainWater {
             suffixMax[i] = Math.max(suffixMax[i + 1], height[i]);
         }
 
-        // We know that the eater is going to stay only if the current
+        System.out.println(Arrays.toString(prefixMax));
+        System.out.println(Arrays.toString(suffixMax));
+
+        // We know that the water is going to stay only if the current
         // ith building right has a high value ans left has a high value
         // how much water th building contains is min(leftMax, rightMax) minus the
         // height of the current building

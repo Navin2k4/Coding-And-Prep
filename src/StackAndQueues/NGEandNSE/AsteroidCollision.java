@@ -17,7 +17,7 @@ import java.util.Deque;
 
 public class AsteroidCollision {
     public static void main(String[] args) {
-        int[] asteroids = { 10, 2, -5 };
+        int[] asteroids = {-5, 10, 2, -5 };
         System.out.println(Arrays.toString(asteroidCollision(asteroids)));
     }
 

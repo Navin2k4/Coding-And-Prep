@@ -12,7 +12,6 @@ public class PreviousSmallerElement {
 
         for (int i = 0; i < n; i++) {
             int num = arr[i];
-            System.out.println(stack);
             while (!stack.isEmpty() && stack.peek() >= num) {
                 stack.pop();
             }
