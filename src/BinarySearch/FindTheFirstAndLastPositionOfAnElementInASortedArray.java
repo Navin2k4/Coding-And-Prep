@@ -27,52 +27,47 @@
 */
 
 package BinarySearch;
-import java.util.Arrays;
+
+import java.util.ArrayList;
 
 public class FindTheFirstAndLastPositionOfAnElementInASortedArray {
     public static void main(String[] args) {
-        int array[] = { 5,7,7,8,8,10 };
-        int ans[] = searchRange(array, 8);
-        System.out.println(Arrays.toString(ans));
-    }   
-
-
-    static int[] searchRange(int[] nums, int target) {
-        int ans[] = {-1,-1};
-        // check for first occourance of target first
-        ans[0] = search(nums,target,true);
-        if(ans[0] != -1){
-            ans[1] = search(nums, target, false);
-        }
-        return ans;
+        int array[] = { 5, 7, 7, 8, 8, 10 };
+        System.out.println(find(array, 8));
     }
 
-    
-    // This function just return the index value of what we are searching (target)
-    static int search(int[] nums,int target,boolean findStartIndex){
+    static ArrayList<Integer> find(int arr[], int x) {
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(-1);
+        result.add(-1);
+        int startIndex = bs(arr, x, true);
+        if (startIndex != -1) {
+            int endIndex = bs(arr, x, false);
+            result.set(0, startIndex);
+            result.set(1, endIndex);
+        }
+        return result;
+    }
+
+    static int bs(int[] arr, int target, boolean start) {
         int ans = -1;
-        int start = 0;
-        int end = nums.length - 1;
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            if (target < nums[mid]) {
-                end = mid - 1; 
-            } 
-            else if (target > nums[mid]) {
-                start = mid + 1; 
-            } 
-            else {
-                // potential answer found but always not correct so checking weather we need to find the start of the value 
-                // or the end of the value using the boolean varibale
+        int low = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == target) {
                 ans = mid;
-                if( findStartIndex ){
-                    end = mid - 1 ;
+                if (start) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
                 }
-                else{
-                    start = mid + 1 ;
-                }
+            } else if (target < arr[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
         }
-    return ans;
+        return ans;
     }
 }

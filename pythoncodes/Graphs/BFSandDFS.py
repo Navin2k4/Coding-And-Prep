@@ -16,7 +16,6 @@ def bfs(graph, V, start=1):
                 queue.append(neighbour)
     return bfs_order
 
-from graph import Graph
 
 def dfs_recursive(graph, V, start=1):
     visited = [False] * (V + 1)

@@ -10,6 +10,7 @@ public class SearchInRotatedSortedArray {
         System.out.println("Index: " + searchWD(arr1, 0));
     }
 
+    // ? Search in Rotated Sorted array 1
     // No Duplicates
     static int searchND(int[] nums, int target) {
         int low = 0;
@@ -39,6 +40,7 @@ public class SearchInRotatedSortedArray {
         return -1;
     }
 
+    // ? Search in Rotated Sorted array 1
     // With Dupliates
     // The idea is converging the search space bu increasing low and reducing high if they all are same;
     static int searchWD(int[] nums, int target) {

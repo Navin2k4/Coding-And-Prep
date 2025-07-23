@@ -1,8 +1,5 @@
 package BinarySearch;
 
-
-
-
 // Classic problem 
 /*
  * Key understanding
@@ -26,41 +23,41 @@ public class KokoEatingBanana {
     }
 
     static int kokoEatBruteBS(int[] arr, int k) {
-            int low = 1;
-            int high = maxElement(arr);
-            int ans = Integer.MAX_VALUE;
-            while (low <= high) {
-                int mid = low + (high - low) / 2;
-                int totalHours = calculateHours(arr, mid);
-                if (totalHours <= k) {
-                    ans = mid;
-                    high = mid - 1;
-                } else {
-                    low = mid + 1;
-                }
+        int low = 1;
+        int high = maxElement(arr);
+        int ans = Integer.MAX_VALUE;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            int totalHours = calculateHours(arr, mid);
+            if (totalHours <= k) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
             }
-
-            return ans;
         }
 
-        static int maxElement(int[] arr) {
-            int max = arr[0];
-            for (int i = 1; i < arr.length; i++) {
-                if (arr[i] > max) {
-                    max = arr[i];
-                }
-            }
-            // System.out.println(max);
-            return max;
-        }
+        return ans;
+    }
 
-        static int calculateHours(int[] arr, int k) {
-            int totalHours = 0;
-            for (int i = 0; i < arr.length; i++) {
-                totalHours += (arr[i] + k - 1) / k;
+    static int maxElement(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
             }
-            return totalHours;
         }
+        // System.out.println(max);
+        return max;
+    }
+
+    static int calculateHours(int[] arr, int k) {
+        int totalHours = 0;
+        for (int i = 0; i < arr.length; i++) {
+            totalHours += (arr[i] + k - 1) / k;
+        }
+        return totalHours;
+    }
 
     static int kokoEatBrute(int[] arr, int k) {
         // code here

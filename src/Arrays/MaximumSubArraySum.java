@@ -1,4 +1,3 @@
-package Arrays;
 
 import java.util.ArrayList;
 
@@ -6,11 +5,11 @@ public class MaximumSubArraySum {
     public static void main(String[] args) {
         // int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         // int[] arr = {-71 ,92, 0, 67 ,-8 ,67 ,-78 ,-7};
-        // int[] arr = { 1, 2, 5, -7, 2, 6 };
-        int[] arr = { -838 ,-329};
-        // System.out.println(maxSubArray(arr));
+        int[] arr = { 1, 2, 5, -7, 2, 6 };
+        // int[] arr = { -838 ,-329};
+        System.out.println(maxSubArray(arr));
         // System.out.println((maxSubArrayAsArray(arr)));
-        System.out.println((findSubarrayGFG(arr)));
+        // System.out.println((findSubarrayGFG(arr)));
     }
 
     static int maxSubArray(int[] nums) {

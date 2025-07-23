@@ -1,33 +1,39 @@
 
-
 import java.util.Arrays;
 
 public class BubbleSort {
     public static void main(String[] args) {
-        int us_arr[] = {1,-8,4,-3,5,4};
-        Bubblesort(us_arr);
+        int us_arr[] = { 1, -8, 4, -3, 5, 4 };
+        bubbleSort(us_arr);
         System.out.println(Arrays.toString(us_arr));
     }
 
-    static void Bubblesort(int arr[]){
-        // Run the steps for n-i times
-        for (int i = 0; i < arr.length; i++) {
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n; i++) {
             boolean swapped = false;
-            // For the each step max itemm will come at the respective index
-            for (int j = 1; j < arr.length-i; j++) {
-                // Swap if the item is smaller than the previous item 
-                if(arr[j] < arr[j-1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                    swapped = true; // ? When the comparison take place and no 
-                                    // ? swapping occours then it is sorted and hence breaking it from executing another i loop
+
+            // Bubble up the largest element to the correct position
+            for (int j = 1; j < n - i; j++) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                    swapped = true;
                 }
             }
-            // If you did not swap a particular value of i it means the array is sorted hence stop the program
-            if(!swapped){
+
+            // Optimization: Break if no swaps occurred
+            if (!swapped) {
                 break;
             }
-            }
         }
+    }
+    
+    static void swap(int[] arr, int i, int j) {
+        if (i == j)
+            return; // No need to swap if indices are the same
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 }
